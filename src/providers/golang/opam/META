@@ -1,7 +1,0 @@
-description = "Golang Provider for Neal"
-version = "0.1.0"
-
-package "parser" (
-  requires = "neal angstrom"
-  archive(byte) = "processor.cmo"
-)
