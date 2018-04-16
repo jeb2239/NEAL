@@ -49,7 +49,7 @@ let rec get_props props =
   ) [] props
 
 and absyn_of_json = function
-  | `Assoc props -> Absyn.Node (get_kind props, get_loc props, get_props props)
+  | `Assoc props -> print_string "hey"; Absyn.Node (get_kind props, get_loc props, get_props props)
   | `Int i -> Absyn.Int i
   | `String s -> Absyn.String s
   | `Bool b -> Absyn.Bool b
@@ -60,6 +60,7 @@ and absyn_of_json = function
 let exec_name = Neal.Utils.relative_path "providers/helpers/goblin.sh"
 
 let parse _ source =
+  print_string "hey";
   let stdout, stdin = Unix.open_process exec_name in
   output_string stdin source;
   close_out stdin;
